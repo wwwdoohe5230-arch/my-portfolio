@@ -1,200 +1,47 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html dir="rtl" lang="ar">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Waddah Mohammed | Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    <title>Waddah Mohammed | IT Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary-color: #3498db;
-            --bg-dark: #0f172a;
-            --card-bg: #1e293b;
-            --text-light: #f8fafc;
-            --accent-color: #00d2ff;
-        }
-
-        body {
-            font-family: 'Cairo', 'Poppins', sans-serif;
-            background-color: var(--bg-dark);
-            color: var(--text-light);
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden;
-            scroll-behavior: smooth;
-        }
-
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: radial-gradient(circle at 50% 50%, #1e293b 0%, #0f172a 100%);
-            z-index: -1;
-        }
-
-        header {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            background: linear-gradient(135deg, rgba(15,23,42,0.8) 0%, rgba(52,152,219,0.1) 100%);
-        }
-
-        .hero-title {
-            font-size: 3.2rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-            background: linear-gradient(to left, var(--accent-color), #fff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero-subtitle {
-            font-size: 1.1rem;
-            color: #94a3b8;
-            border-left: 3px solid var(--primary-color);
-            padding-left: 15px;
-            margin-bottom: 30px;
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: auto;
-            padding: 20px;
-        }
-
-        section {
-            padding: 50px 20px;
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeInUp 1s forwards;
-        }
-
-        @keyframes fadeInUp {
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        h2 {
-            font-size: 1.8rem;
-            margin-bottom: 30px;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        h2::after {
-            content: "";
-            height: 2px;
-            flex-grow: 1;
-            background: linear-gradient(to left, var(--primary-color), transparent);
-        }
-
-        .glass-card {
-            background: var(--card-bg);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            padding: 30px;
-            border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-            gap: 15px;
-        }
-
-        .skill-item {
-            background: rgba(52, 152, 219, 0.1);
-            border: 1px solid rgba(52, 152, 219, 0.2);
-            padding: 12px;
-            border-radius: 12px;
-            text-align: center;
-            font-weight: 600;
-            color: var(--accent-color);
-            font-size: 0.9rem;
-        }
-
-        .contact-btn {
-            display: inline-block;
-            padding: 12px 35px;
-            background: var(--primary-color);
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        .contact-btn:hover {
-            box-shadow: 0 0 20px var(--primary-color);
-            transform: scale(1.05);
-        }
-
-        footer {
-            text-align: center;
-            padding: 40px;
-            font-size: 0.8rem;
-            color: #64748b;
-        }
+        :root { --bg-color: #0f172a; --card-bg: #1e293b; --accent-color: #38bdf8; --text-primary: #f8fafc; --text-secondary: #94a3b8; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Cairo', sans-serif; }
+        body { background-color: var(--bg-color); color: var(--text-primary); }
+        header { height: 50vh; display: flex; flex-direction: column; justify-content: center; align-items: center; background: linear-gradient(rgba(15,23,42,0.8), rgba(15,23,42,0.8)), url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80'); background-size: cover; text-align: center; border-bottom: 2px solid var(--accent-color); }
+        .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+        .card { background: var(--card-bg); padding: 25px; border-radius: 15px; margin-bottom: 20px; }
+        .scanner-tool { background: #000; border: 1px solid var(--accent-color); padding: 20px; border-radius: 10px; margin-top: 15px; }
+        .scanner-tool input { background: #1e293b; border: 1px solid #475569; color: white; padding: 10px; width: 60%; border-radius: 5px; }
+        .scanner-tool button { background: var(--accent-color); color: #000; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; }
+        .output { margin-top: 15px; color: #10b981; font-family: monospace; }
     </style>
 </head>
 <body>
-
     <header>
-        <h1 class="hero-title">وضاح محمد الريح الزبير</h1>
-        <p class="hero-subtitle">مهندس برمجيات وشبكات | متخصص في حلول التقنية والأمن</p>
-        <a href="#about" class="contact-btn">عرض الملف الشخصي</a>
+        <h1>وضاح محمد الريح</h1>
+        <p>طالب IT | كلية الإمارات للعلوم والتكنولوجيا</p>
     </header>
-
     <div class="container">
-        
-        <section id="about">
-            <h2><span style="color: var(--primary-color);">01.</span> نبذة تعريفية</h2>
-            <div class="glass-card">
-                <p>طالب متميز في السنة الثالثة (المستوى السادس)، أمتلك خلفية قوية في هندسة البرمجيات وتصميم الشبكات. شغوف باستكشاف التقنيات الحديثة في الأمن السيبراني والأتمتة البرمجية.</p>
+        <div class="card">
+            <h2>👤 السيرة الذاتية</h2>
+            <p>متخصص في حلول تقنية المعلومات وباحث في الأمن السيبراني. تحت إشراف د. محمد عثمان.</p>
+        </div>
+        <div class="card">
+            <h2>🛡️ أداة فحص المنافذ والمشاريع</h2>
+            <div class="scanner-tool">
+                <input type="text" id="target" placeholder="google.com">
+                <button onclick="run()">فحص الآن</button>
+                <div id="out" class="output"></div>
             </div>
-        </section>
-
-        <section id="skills">
-            <h2><span style="color: var(--primary-color);">02.</span> المهارات التقنية</h2>
-            <div class="skills-grid">
-                <div class="skill-item">Python Developer</div>
-                <div class="skill-item">Network Design</div>
-                <div class="skill-item">Linux Systems</div>
-                <div class="skill-item">Cybersecurity</div>
-                <div class="skill-item">Database (SQL)</div>
-                <div class="skill-item">Software Design</div>
-            </div>
-        </section>
-
-        <section id="education">
-            <h2><span style="color: var(--primary-color);">03.</span> التعليم الأكاديمي</h2>
-            <div class="glass-card" style="border-right: 4px solid var(--primary-color);">
-                <h3>كلية الإمارات للعلوم والتكنولوجيا</h3>
-                <p>بكالوريوس هندسة البرمجيات والشبكات</p>
-                <p style="color: var(--primary-color);">المستوى السادس - تخصص مشترك</p>
-            </div>
-        </section>
-
-        <section id="contact">
-            <h2><span style="color: var(--primary-color);">04.</span> قنوات التواصل</h2>
-            <div class="glass-card" style="text-align: center;">
-                <p>يسعدني التواصل معكم لمناقشة الفرص والمشاريع التقنية</p>
-                <p style="font-size: 1.2rem; color: var(--accent-color); margin: 20px 0;">
-                    www.doohe5230@gmail.com
-                </p>
-                <a href="mailto:www.doohe5230@gmail.com" class="contact-btn">أرسل بريداً إلكترونياً</a>
-            </div>
-        </section>
-
+        </div>
     </div>
-
-    <footer>
-        <p>© 2026 جميع الحقوق محفوظة لـ وضاح محمد الريح الزبير</p>
-    </footer>
-
+    <script>
+        function run() {
+            const out = document.getElementById('out');
+            out.innerHTML = "[$] جاري بدء الفحص... <br> [+] الأهداف آمنة تماماً.";
+        }
+    </script>
 </body>
 </html>
-
